@@ -1,7 +1,10 @@
 main();
 
 function main() {
-    
+    let buttons = document.getElementsByClassName("number");
+    for(let i = 0; i < buttons.length; i++){
+        buttons[i].addEventListener("click", )
+    }
 
 }
 

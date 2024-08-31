@@ -14,7 +14,7 @@ body {
 
 #outer {
     height: 680px;
-    width: 500px;
+    width: 440px;
     background-color: rgb(196, 196, 196);
     border-radius: 12px;
     box-shadow: 6px 6px 5px rgb(66, 66, 66), 8px 8px 5px rgb(241, 241, 241) inset, -6px -6px 8px rgb(95, 95, 95) inset;
@@ -38,7 +38,7 @@ body {
     padding: 8px;
     font-size: 60px;
     border: solid 3px rgb(143, 143, 143);
-    box-shadow: 4px 4px 5px rgb(66, 66, 66), 4px 4px white inset, -2px -2px 2px rgb(163, 163, 163) inset;
+    box-shadow: -4px -4px white inset, 4px 4px 2px rgb(133, 133, 133) inset;
 }
 
 .buttons {
@@ -53,7 +53,7 @@ button {
     width: 80px;
     height: 80px;
     border-radius: 12px;
-    margin: 4px 10px;
+    margin: 4px 8px;
     box-sizing: border-box;
     border: solid 3px rgb(143, 143, 143);
     box-shadow: 2px 2px 5px rgb(66, 66, 66), 2px 2px rgb(241, 241, 241) inset, -2px -2px 2px rgb(163, 163, 163) inset;
@@ -64,7 +64,7 @@ button:hover {
 }
 
 #operate {
-    width: 192px;
+    width: 180px;
     box-sizing: border-box;
     padding: 0;
 }
