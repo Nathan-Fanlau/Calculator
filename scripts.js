@@ -19,7 +19,7 @@ function main() {
 			if (!operand) firstNum = parseFloat(num);
 			else secondNum = parseFloat(num);
 
-			// console.log(firstNum, secondNum, operand);
+			console.log(firstNum, secondNum, operand);
 		});
 	}
 
@@ -27,7 +27,7 @@ function main() {
 		operands[i].addEventListener("click", () => {
 			operand = operands[i].value;
 
-			// console.log(firstNum, secondNum, operand);
+			console.log(firstNum, secondNum, operand);
 		});
 	}
 
@@ -36,18 +36,25 @@ function main() {
 		firstNum = secondNum = operand = null;
 	});
 	changeSignBtn.addEventListener("click", () => {
+		if (secondNum) secondNum = changeSign(secondNum);
+		else firstNum = changeSign(firstNum);
 		display.textContent = changeSign(display.textContent);
 	});
 	operateBtn.addEventListener("click", () => {
-		firstNum = operate(firstNum, secondNum, operand);
-		display.textContent = firstNum;
-		secondNum = null;
+		if (operand == "divide" && secondNum == 0) {
+			display.textContent = "✌(◕‿-)✌";
+			firstNum = secondNum = operand = null;
+		} else {
+			firstNum = operate(firstNum, secondNum, operand, display);
+			display.textContent = firstNum;
+			secondNum = operand = null;
 
-		// console.log(firstNum, secondNum, operand);
+			console.log(firstNum, secondNum, operand);
+		}
 	});
 }
 
-function operate(firstNum, secondNum, operand){
+function operate(firstNum, secondNum, operand) {
 	let num;
 	switch (operand) {
 		case "add":
