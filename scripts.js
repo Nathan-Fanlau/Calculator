@@ -7,27 +7,29 @@ function main() {
 	let buttons = document.querySelectorAll(".number");
 	let operands = document.querySelectorAll(".operand");
 	let operateBtn = document.querySelector("#operate");
+	let decimalBtn = document.querySelector("#decimal");
 	let firstNum, operand, secondNum;
 
 	for (let i = 0; i < buttons.length; i++) {
 		buttons[i].addEventListener("click", () => {
-			if (operand && !secondNum) display.textContent = "";
+			if (firstNum && operand && !secondNum) display.textContent = "";
 
 			let num = display.textContent.concat(buttons[i].value);
 			display.textContent = num;
 
 			if (!operand) firstNum = parseFloat(num);
 			else secondNum = parseFloat(num);
-
-			console.log(firstNum, secondNum, operand);
 		});
 	}
 
 	for (let i = 0; i < operands.length; i++) {
 		operands[i].addEventListener("click", () => {
-			operand = operands[i].value;
-
-			console.log(firstNum, secondNum, operand);
+			if (firstNum && secondNum && operand) {
+				document.getElementById("operate").click();
+				operand = operands[i].value;
+			} else {
+				operand = operands[i].value;
+			}
 		});
 	}
 
@@ -48,8 +50,11 @@ function main() {
 			firstNum = operate(firstNum, secondNum, operand, display);
 			display.textContent = firstNum;
 			secondNum = operand = null;
-
-			console.log(firstNum, secondNum, operand);
+		}
+	});
+	decimalBtn.addEventListener("click", () => {
+		if (!display.textContent.includes(".")) {
+			display.textContent = display.textContent.concat(".");
 		}
 	});
 }

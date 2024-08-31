@@ -39,6 +39,8 @@ body {
     font-size: 60px;
     border: solid 3px rgb(143, 143, 143);
     box-shadow: -4px -4px white inset, 4px 4px 2px rgb(133, 133, 133) inset;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .buttons {
